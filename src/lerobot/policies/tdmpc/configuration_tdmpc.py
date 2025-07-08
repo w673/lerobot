@@ -146,8 +146,8 @@ class TDMPCConfig(PreTrainedConfig):
     # Training and loss computation.
     max_random_shift_ratio: float = 0.0476
     # Loss coefficients.
-    reward_coeff: float = 3
-    expectile_weight: float = 0.7
+    reward_coeff: float = 5
+    expectile_weight: float = 0.5
     value_coeff: float = 0.1
     consistency_coeff: float = 10.0
     advantage_scaling: float = 3.0
