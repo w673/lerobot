@@ -134,9 +134,9 @@ class TDMPCConfig(PreTrainedConfig):
     # Inference.
     use_mpc: bool = True
     cem_iterations: int = 6
-    max_std: float = 3.0
+    max_std: float = 5.0
     min_std: float = 0.05
-    n_gaussian_samples: int = 1024
+    n_gaussian_samples: int = 2048
     n_pi_samples: int = 51
     uncertainty_regularizer_coeff: float = 1.0
     n_elites: int = 50
