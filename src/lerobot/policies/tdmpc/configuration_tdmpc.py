@@ -125,7 +125,7 @@ class TDMPCConfig(PreTrainedConfig):
     # Neural networks.
     image_encoder_hidden_dim: int = 32
     state_encoder_hidden_dim: int = 256
-    latent_dim: int = 200
+    latent_dim: int = 50
     q_ensemble_size: int = 5
     mlp_dim: int = 512
     # Reinforcement learning.
@@ -134,24 +134,24 @@ class TDMPCConfig(PreTrainedConfig):
     # Inference.
     use_mpc: bool = True
     cem_iterations: int = 6
-    max_std: float = 5.0
+    max_std: float = 2.0
     min_std: float = 0.05
-    n_gaussian_samples: int = 2048
+    n_gaussian_samples: int = 512
     n_pi_samples: int = 51
     uncertainty_regularizer_coeff: float = 1.0
     n_elites: int = 50
-    elite_weighting_temperature: float = 1
+    elite_weighting_temperature: float = 0.5
     gaussian_mean_momentum: float = 0.1
 
     # Training and loss computation.
     max_random_shift_ratio: float = 0.0476
     # Loss coefficients.
-    reward_coeff: float = 5
-    expectile_weight: float = 0.5
+    reward_coeff: float = 0.5
+    expectile_weight: float = 0.9
     value_coeff: float = 0.1
-    consistency_coeff: float = 10.0
+    consistency_coeff: float = 20.0
     advantage_scaling: float = 3.0
-    pi_coeff: float = 0.2
+    pi_coeff: float = 0.5
     temporal_decay_coeff: float = 0.5
     # Target model.
     target_model_momentum: float = 0.995
