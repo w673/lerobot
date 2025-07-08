@@ -47,7 +47,7 @@ pprint(repo_ids)
 # https://huggingface.co/datasets?other=LeRobot
 
 # Let's take this one for this example
-repo_id = "lerobot/aloha_mobile_cabinet"
+repo_id = "lerobot/xarm_lift_medium"
 # We can have a look and fetch its metadata to know more about it:
 ds_meta = LeRobotDatasetMetadata(repo_id)
 
@@ -118,11 +118,9 @@ print(dataset.features[camera_key]["shape"])
 # differences with the current loaded frame. For instance:
 delta_timestamps = {
     # loads 4 images: 1 second before current frame, 500 ms before, 200 ms before, and current frame
-    camera_key: [-1, -0.5, -0.20, 0],
-    # loads 6 state vectors: 1.5 seconds before, 1 second before, ... 200 ms, 100 ms, and current frame
-    "observation.state": [-1.5, -1, -0.5, -0.20, -0.10, 0],
-    # loads 64 action vectors: current frame, 1 frame in the future, 2 frames, ... 63 frames in the future
-    "action": [t / dataset.fps for t in range(64)],
+     camera_key: [-15, -7, -3, 0],
+    "observation.state": [-23, -15, -7, -3, -1, 0],
+    "action": list(range(64)),
 }
 # Note that in any case, these delta_timestamps values need to be multiples of (1/fps) so that added to any
 # timestamp, you still get a valid timestamp.
