@@ -125,7 +125,7 @@ class TDMPCConfig(PreTrainedConfig):
     # Neural networks.
     image_encoder_hidden_dim: int = 32
     state_encoder_hidden_dim: int = 256
-    latent_dim: int = 100
+    latent_dim: int = 200
     q_ensemble_size: int = 5
     mlp_dim: int = 512
     # Reinforcement learning.
@@ -147,7 +147,7 @@ class TDMPCConfig(PreTrainedConfig):
     max_random_shift_ratio: float = 0.0476
     # Loss coefficients.
     reward_coeff: float = 2
-    expectile_weight: float = 0.9
+    expectile_weight: float = 0.7
     value_coeff: float = 0.1
     consistency_coeff: float = 10.0
     advantage_scaling: float = 3.0
