@@ -47,11 +47,11 @@ class SmolVLAConfig(PreTrainedConfig):
 
     # Add empty images. Used by smolvla_aloha_sim which adds the empty
     # left and right wrist cameras in addition to the top camera.
-    empty_cameras: int = 0
+    empty_cameras: int = 2
 
     # Converts the joint and gripper values from the standard Aloha space to
     # the space used by the pi internal runtime which was used to train the base model.
-    adapt_to_pi_aloha: bool = False
+    adapt_to_pi_aloha: bool = True
 
     # Converts joint dimensions to deltas with respect to the current state before passing to the model.
     # Gripper dimensions will remain in absolute values.
@@ -83,9 +83,9 @@ class SmolVLAConfig(PreTrainedConfig):
     scheduler_decay_lr: float = 2.5e-6
 
     vlm_model_name: str = "HuggingFaceTB/SmolVLM2-500M-Video-Instruct"  # Select the VLM backbone.
-    load_vlm_weights: bool = False  # Set to True in case of training the expert from scratch. True when init from pretrained SmolVLA weights
+    load_vlm_weights: bool = True  # Set to True in case of training the expert from scratch. True when init from pretrained SmolVLA weights
 
-    add_image_special_tokens: bool = False  # Whether to use special image tokens around image features.
+    add_image_special_tokens: bool = True  # Whether to use special image tokens around image features.
 
     attention_mode: str = "cross_attn"
 
